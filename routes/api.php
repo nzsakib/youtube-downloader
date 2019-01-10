@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('download', 'PagesController@download');
+
+Route::get('download', function() {
+	return response()->download(storage_path('app/public/youtube/4glHOgqJ88U.mp4'));
+});

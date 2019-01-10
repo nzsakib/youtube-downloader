@@ -21,6 +21,8 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+import Download from './components/Download.vue';
+Vue.component('download-request', Download);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,5 +31,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    mounted() {
+    	// Echo.channel('test')
+    	// 	.listen('DownloadHasFinished', e => {
+    	// 		console.log('Download has finished behind the scences');
+    	// 		console.log(e);
+    	// 	});
+    }
 });
